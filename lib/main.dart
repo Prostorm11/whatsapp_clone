@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
         future: Firebase.initializeApp(
             options: DefaultFirebaseOptions.currentPlatform),
         builder: (context, snapshot) {
-          return ChatPlate();
-         /*  switch (snapshot.connectionState) {
+           
+           switch (snapshot.connectionState) {
             case (ConnectionState.done):
               if (auth.currentUser != null) {
                 return const MyHome();
@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               );
-          } */
+          } 
     
           /*   */
         });
