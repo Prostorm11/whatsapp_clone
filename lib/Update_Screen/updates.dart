@@ -119,6 +119,12 @@ class _UpdatesState extends State<Updates> {
                             child: const Column(
                               children: [
                                 StatusPlate(),
+                                StatusPlate(),
+                                StatusPlate(),
+                                StatusPlate(),
+                                StatusPlate(),
+                                StatusPlate(),
+                                StatusPlate(),
                                 StatusPlate()
                               ],
                             ),
