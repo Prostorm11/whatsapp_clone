@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Calls_Screen/call_plate.dart';
+import 'package:whatsapp_clone/constants.dart';
 
 enum MenuAction { logout }
 
@@ -14,6 +15,26 @@ class _CallsState extends State<Calls> {
   bool allSelected = true;
   bool missedSelected = false;
 
+
+  void _showbottommodal(BuildContext context) {
+    showModalBottomSheet(
+      isScrollControlled: true,
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 0.9 * screenheight(context),
+            width: 0.98* screenwidth(context),
+            // color: Colors.amber,
+            child: Column(
+              children: [
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text("close"))
+              ],
+            ),
+          );
+        });
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -59,15 +80,13 @@ class _CallsState extends State<Calls> {
                               child: Text(
                                 "All",
                                 style: TextStyle(
-                                  color: allSelected
-                                      ? Colors.white
-                                      : Colors.black,
+                                  color:
+                                      allSelected ? Colors.white : Colors.black,
                                 ),
                               ),
                             ),
                           ),
                         ),
-                         
                         InkWell(
                           onTap: () {
                             setState(() {
@@ -96,10 +115,12 @@ class _CallsState extends State<Calls> {
                         ),
                       ],
                     ),
-                    const SizedBox(
+                     SizedBox(
                       child: Row(
                         children: [
-                          Icon(Icons.add),
+                          InkWell(
+                            onTap:()=> _showbottommodal(context),
+                            child: Icon(Icons.add)),
                         ],
                       ),
                     ),
